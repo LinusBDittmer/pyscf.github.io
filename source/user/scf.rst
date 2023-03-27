@@ -226,6 +226,24 @@ second-order SCF (SOSCF).
 
     More examples can be found in 
     :source:`examples/scf/22-newton.py`.
+    
+    Furthermore, PySCF implements the Markovian Multiagent Monte-
+    Carlo SOSCF algorithm that allows for differential evolution
+    minimisation utilising the above CIAH algorithm. This is
+    useful for particularly difficult to converge systems. M3
+    can be created from the SCF object via::
+        
+        m3 = scf.M3SOSCF(scf.RHF(mol), agents)
+        
+    Additionally, a combined DIIS/M3 method is available as the
+    DIIS_M3 class, that can be created via::
+    
+        diis_m3 = scf.DIIS_M3(mf, agents)
+    
+    Examples of usage can be found in
+    :source:`examples/scf/50-m3soscf.py`
+    and
+    :source:`examples/scf/51-diis_m3.py`
 
 * Damping
 
