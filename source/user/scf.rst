@@ -234,11 +234,12 @@ second-order SCF (SOSCF).
     can be created from the SCF object via::
         
         m3 = scf.M3SOSCF(scf.RHF(mol), agents)
+        m3 = scf.RHF(mol).m3soscf(agents)
         
     Additionally, a combined DIIS/M3 method is available as the
     DIIS_M3 class, that can be created via::
     
-        diis_m3 = scf.DIIS_M3(mf, agents)
+        diis_m3 = scf.DIIS_M3(scf.RHF(mol), agents)
     
     Examples of usage can be found in
     :source:`examples/scf/50-m3soscf.py`
